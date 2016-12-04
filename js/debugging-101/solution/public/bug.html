@@ -1,0 +1,24 @@
+<div ng-controller="BugDetail as bDetail" ng-init="bDetail.getBug()">
+<!--<div ng-controller="BugDetail as bDetail" ng-init="bDetail.getBug()">-->
+	<h1>{{ bDetail.greeting }}</h1>
+	<a href="#/">Back</a>
+	<h2>{{ bDetail.bug.name }}</h2>
+	<ul>
+		<li> File: {{ bDetail.bug.file }}</li>
+		<!--BUG: openning <li> instead of closing </li>-->
+		<!--MESSAGE: No message, but extra empty line is added to detail display-->
+		<!--FIX: Close the <li> properly-->
+		<!--<li> Line#  {{ bDetail.bug.lineNumber }}<li>-->
+		<!--BUG: lineNo instead of lineNumber-->
+		<!--MESSAGE: No message, but Line# is always blank in detail display-->
+		<!--FIX: use bDetail.bug.lineNumber instead of lineNo-->
+		<!--<li> Line# {{ bDetail.bug.lineNo }}</li>-->
+		<li> Line# {{ bDetail.bug.lineNumber }}</li>
+		<!--do a nested ng-repeat here to print the messages out nicely-->
+		<li> Messages:
+			<ul>
+				<li ng-repeat="message in bDetail.bug.messages">{{ message }}</li>
+			</ul>
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="DaBug">
+
+<head>
+	<title>DaBugging</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+	<!--BUG: do not include the script for angular-route
+	MESSAGE: Dev Console: angular.js:68 Uncaught Error: [$injector:modulerr] Failed to instantiate module DaBug due to:
+	Error: [$injector:modulerr] Failed to instantiate module ngRoute due to:
+	Error: [$injector:nomod] Module 'ngRoute' is not available! You either misspelled the module name or forgot to load it. If registering a module ensure that you specify the dependencies as the second argument.
+	FIX: include the script for angular-route-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script>
+	<script src="/bugs.js"></script>
+
+</head>
+
+<body>
+	<ng-view>
+		<!--partials go here!-->
+		<h1>This is a bug!</h1>
+	</ng-view>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+.front, .back {
+	transition: -webkit-transform 1s;
+	-webkit-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+}
+
+.front {
+	position: absolute;
+}
+
+.back {
+	-webkit-transform: rotateY(-180deg);
+}
+
+.portfolio-item {
+	-webkit-perspective: 600px;
+}
+
+.portfolio-item:hover .back {
+	-webkit-transform: rotateY(0);
+}
+
+.portfolio-item:hover .front {
+	-webkit-transform: rotateY(180deg);
+}
+

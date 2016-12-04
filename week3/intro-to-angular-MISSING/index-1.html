@@ -1,0 +1,27 @@
+<html ng-app="MyApp">
+
+<head>
+    <title>Part 1</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="main-1.js"></script>
+</head>
+
+<body ng-controller="myController as mCtrl">
+
+    <button ng-click="mCtrl.log('Hello')">Button 1</button>
+    <p>
+    <button ng-click="toggle2=!toggle2" ng-show="!toggle2">Button 2</button>
+    <h1 ng-click="toggle2=!toggle2" ng-show="toggle2">Header</h1>
+    <p>
+    <button ng-click="toggle3=!toggle3" ng-show="!toggle3">Button 3</button>
+    <div ng-click="toggle3=!toggle3" ng-show="toggle3">
+        <ul>
+            <li>Item1</li>
+            <li>Item2</li>
+            <li>Item3</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

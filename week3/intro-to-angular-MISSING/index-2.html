@@ -1,0 +1,24 @@
+<html ng-app="MyApp">
+
+<head>
+    <title>Part 2</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="main-2.js"></script>
+</head>
+
+<body ng-controller="myController as mCtrl">
+    <h2>Heading title</h2>
+<div ng-style="mCtrl.textColour" ng-mouseenter="mCtrl.changeColor('pink')" ng-mouseleave="mCtrl.changeColor('black')">
+Lorem ipsum dolor sit amet, quis aliquando vis eu, mel cu veri quaeque percipitur. Pri clita placerat pertinacia in. Has quando tantas appellantur in, doctus aliquam te mel, ut falli verterem insolens eum. Has ad utamur integre abhorreant.
+<p>
+Laudem facilis corrumpit cu ius. Alii tollit et est, in aliquam placerat deseruisse quo. Te vel veri nostro maiorum. Quem numquam id mel, no vitae legimus postulant quo, discere oporteat instructior et eam. Suas porro ea vim. Civibus salutandi tincidunt his eu, pri ut oblique albucius luptatum, mei latine principes cu.
+</div>
+
+<h3 ng-click="mCtrl.exclaim()">A link</h3>
+
+<a href="http://google.com" ng-click="mCtrl.confirm()" confirm="Are you sure?"> Link to Google</a>
+
+
+</body>
+
+</html>

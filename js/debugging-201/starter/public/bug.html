@@ -1,0 +1,14 @@
+<form method="get" action="/">
+    <button type="submit">Back</button>
+</form>
+<h1>{{ profile.bug.name }}</h1>
+<ul>
+    <li> File:  {{ profile.bug.file }}</li>
+    <li> Line#  {{ profile.bug.lineNumber }}<li>
+    <!--do a nested ng-repeat here to print the messages out nicely-->
+    <li> Messages: 
+        <ul>
+            <li ng-repeat="message in profile.bug.messages">{{ message }}</li> 
+        </ul>
+    </li>
+</ul>

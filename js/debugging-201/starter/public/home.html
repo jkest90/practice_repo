@@ -1,0 +1,28 @@
+ <h1>{{ bugs.greeting }}</h1>
+
+    <!--instead of looking at the bugs in raw form like this, let's display them in a list (below)-->
+    <!--<div> {{ bugs.bugList }} </div>-->
+
+    <!--this is a prettier way to display our list of bugs.-->
+    <!--bugs are immediately added to the list when we create a new one-->
+    <ul>
+        <li ng-repeat="bug in bugs.bugList">
+            <a href="#/bugs/{{ bug._id }}">{{ bug.name }}</a>
+        </li>
+    </ul>
+
+    <!--create a form to create new bugs-->
+    <form ng-submit="bugs.createBug()">
+        <input type="text" placeholder="name" ng-model="bugs.name">
+        <input type="text" placeholder="file" ng-model="bugs.file">
+        <input type="text" placeholder="lineNumber" ng-model="bugs.lineNumber">
+
+        <!--this will create an input field where we can enter messages, separated by colons-->
+        <!--<input type="text" placeholder="Messages" ng-model="bugs.messages" ng-list>-->
+
+        <!--here we are creating a messages input field for every time we enter a new message-->
+        <!--we track by $index in order to model each message at a time rather than the whole array-->
+        <input type="text" placeholder="Messages" ng-model="bugs.messages[$index]" ng-repeat="message in bugs.messages track by $index">
+        <button type="button" ng-click='bugs.addMessage()'>Add Message</button>
+        <input type="submit" />
+    </form>

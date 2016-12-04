@@ -1,0 +1,89 @@
+/* Running the stylus command from the command line manually every time you save a .styl file can be cumbersome. Look up how to use the stylus command to watch files for changes and auto-compile.*/
+/* Explore using variables to store things like colors or values for padding/margin/etc. Make two variables called primaryColor and secondaryColor to use on a few elements. */
+/* Defaults */
+body {
+  font-family: Helvetica;
+  margin: 10px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+/* Lightbox */
+.lightbox {
+  height: 500px;
+  width: 100%;
+  background: rgba(0,0,0,0.65);
+  display: table;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.lightbox-container {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* Using the indented syntax, style an element & one of its child elements. (Notice how the indentations let Stylus know which styles apply to which element).*/
+.lightbox-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+ul,
+li,
+color: red,
+.lightbox-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+ul,
+li,
+color: red,
+.pull-right {
+  float: right;
+}
+/* Button */
+.button {
+  padding: 10px 40px;
+  display: inline-block;
+  color: #fff;
+  background-color: #ec828a;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 0;
+}
+/* Now add both a :hover state style and media query on the parent element using the indented style and add CSS properties to test them out.*/
+/*TODO*/
+.button:hover {
+  background-color: #dc626a;
+}
+.gallery img {
+/* Give gallery images a little breathing room */
+  margin: 5px;
+}
+/* Responsive Media Queries */
+@media screen and (max-width: 960px) {
+  header,
+  main {
+/* Give content some breathing room on smaller screens */
+    padding: 0 20px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .gallery img {
+/* On smaller screens, stack gallery images vertically */
+    display: block;
+    margin: 5px auto;
+  }
+}
